@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Instructions from '../Instructions/Instructions.js';
 
 const displayEmojiName = event => alert(event.target.id);
 
@@ -24,18 +25,17 @@ const emojis = [
 
 function App() {
   const greeting = "greeting";
+  const displayAction = false;
   return(
     <div className="container">
       <h1 id={greeting}>Hello, World</h1>
-      <p>I am writing JSX</p>
+      <Instructions />
       <ul>
         {
           emojis.map(emoji => (
             <li key={emoji.name}>
-              <button
-                onClick={displayEmojiName}
-              >
-                <span role="img" aria-label={emoji.name} id={emoji.name}>{emoji.emoji}</span>
+              <button onClick={displayEmojiName}>
+                <span role="img" aria-label="emoji.name" id="emoji.emoji">{emoji.emoji}</span>
               </button>
             </li>
           ))
