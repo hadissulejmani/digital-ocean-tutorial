@@ -1,36 +1,23 @@
 import React from 'react';
 import './App.css';
-import data from './data.js';
-import AnimalCard from '../AnimalCard/AnimalCard.js';
 
-function showAdditional(additional){
-  const alertInformation = Object.entries(additional)
-    .map(information => `${information[0]}: ${information[1]}`)
-    .join('\n');
-  alert(alertInformation);
-};
+import animals from './data';
+import AnimalCard from '../AnimalCard/AnimalCard';
 
 function App() {
-  const greeting = "greeting";
-  const displayAction = false;
-  return(
+  return (
     <div className="wrapper">
-      <h1 id={greeting}>Animals</h1>
-      {
-        data.map(animal => (
-          <AnimalCard 
-            additional={animal.additional}
-            diet={animal.diet}
-            key={animal.name}
-            name={animal.name}
-            scientificName={animal.scientificName}
-            showAdditional={showAdditional}
-            size={animal.size}
-          />
-        ))
-      }
+      {animals.map(animal =>
+        <AnimalCard
+          diet={animal.diet}
+          key={animal.name}
+          name={animal.name}
+          size={animal.size}
+          scientificName={animal.scientificName}
+        />
+      )}
     </div>
-  )
+  );
 }
 
-export default App; 
+export default App;

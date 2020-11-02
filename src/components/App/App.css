@@ -4,6 +4,13 @@
   align-items: center;
 }
 
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
 button {
   font-size: 4em;
   border: 0;
